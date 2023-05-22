@@ -7,7 +7,7 @@
         <th>Piso</th>
         <th>Número de sala</th>
         <th>Estado</th>
-                <th colspan="3">Opciones</th>
+                <th colspan="3">Las opciones</th>
             </tr>
         </thead>
         <tbody>

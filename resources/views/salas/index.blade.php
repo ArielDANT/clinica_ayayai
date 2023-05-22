@@ -11,7 +11,7 @@ body{
     font-family: sans-serif;
 </style>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Salas</li>
+        <li class="breadcrumb-item">Las salas</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">

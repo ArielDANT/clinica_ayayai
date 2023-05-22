@@ -62,7 +62,7 @@ class SalasController extends AppBaseController
     {
         $clinicas= Clinica::pluck('cli_nombres' , 'cli_id');
         return view('salas.create')
-         ->with ('clinicas', $clinicas)
+         ->with ('clinica', $clinicas)
         ;
     }
 

@@ -1,7 +1,9 @@
 <!-- Cli Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('cli_id', 'Cli Id:') !!}
-    {!! Form::select('cli_id', $clinica, null, ['class' => 'form-control']) !!}
+    {!! Form::label('cli_id', 'Clinica:') !!}
+    {!! Form::select('cli_id', $clinicas, null, ['class' => 'form-control']) !!} 
+
+
 </div>
 
 <!-- Sal Nombre Field -->

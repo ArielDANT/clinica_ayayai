@@ -109,7 +109,7 @@ class DoctoresController extends AppBaseController
 
         $doctores = $this->doctoresRepository->create($input);
 
-        Flash::success('Doctores saved successfully.');
+        Flash::success('Doctor guardado correctamente');
 
         return redirect(route('doctores.index'));
     }
@@ -126,7 +126,7 @@ class DoctoresController extends AppBaseController
         $doctores = $this->doctoresRepository->find($id);
 
         if (empty($doctores)) {
-            Flash::error('Doctores not XDXDXDfound');
+            Flash::error('Doctor no encontrado');
 
             return redirect(route('doctores.index'));
         }
@@ -150,7 +150,7 @@ class DoctoresController extends AppBaseController
         $doctores = $this->doctoresRepository->find($id);
 
         if (empty($doctores)) {
-            Flash::error('Doctores not found');
+            Flash::error('Doctor no encontrado');
 
             return redirect(route('doctores.index'));
         }
@@ -175,14 +175,14 @@ class DoctoresController extends AppBaseController
         $doctores = $this->doctoresRepository->find($id);
 
         if (empty($doctores)) {
-            Flash::error('Doctores not found');
+            Flash::error('Doctor no encontrado');
 
             return redirect(route('doctores.index'));
         }
 
         $doctores = $this->doctoresRepository->update($request->all(), $id);
 
-        Flash::success('Doctores updated successfully.');
+        Flash::success('Doctor actualizado correctamente');
 
         return redirect(route('doctores.index'));
     }
@@ -201,14 +201,14 @@ class DoctoresController extends AppBaseController
         $doctores = $this->doctoresRepository->find($id);
 
         if (empty($doctores)) {
-            Flash::error('Doctores not found');
+            Flash::error('Doctor no encontrado');
 
             return redirect(route('doctores.index'));
         }
 
         $this->doctoresRepository->delete($id);
 
-        Flash::success('Doctores deleted successfully.');
+        Flash::success('Doctor eliminado correctamente');
 
         return redirect(route('doctores.index'));
     }

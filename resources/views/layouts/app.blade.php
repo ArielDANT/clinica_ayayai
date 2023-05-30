@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!--<title>{{config('app.name')}}</title> -->
     <title>CLÍNICA AYAYAI</title>
-    <link rel="shortcut icon" href="https://tmssl.akamaized.net/images/wappen/big/6362.png?lm=1643034473">
+    <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAP4KTrEZJDqL5OobEM8rxffXrsXkGdBzlMDFgf03ihZg4iXbxAwNox0KVsnbM1eqt9FwsrFOV-BQlM6Y_nMRTG3Z63vBVXdry87UDofzL2v9YSs3wq1O-3RC_Id0jJqOUu3mCZuoL7oD8av-PdHaG6xxVwMZ-ETOR1ZJKhnVRe2h7TnpZTE6nfXNn/s1600/fotor_2023-5-30_12_16_5-removebg-preview.png">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 4.1.1 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
@@ -29,9 +29,9 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="https://static.patiotuerca.com/ghost/ecuador/2022/01/logo-patiotuerca--2-.png" width="150" height="30"
+        <img class="navbar-brand-full" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiVsApcpks5NrdNipHOFUu8eaGjCeP1IJ_6g49a-iEbL7oLAcDry_iyO6zqyr8A9nzu9gBK59XeHCmeWVMQGZTuLVmWYHcZDTzPoLY6P2Wf_iQAnmkbWpWrt3ErAftQKzV_Y4jWGhTj7At_m-OQ9V4UPkNCZtx7U5obAblD_fn8F0KuSN9Q6nt-nfa/s320/fotor_2023-5-30_12_11_59-removebg-preview.png" width="150" height="30"
              alt="InfyOm Logo">
-        <img class="navbar-brand-minimized" src="https://d1fdloi71mui9q.cloudfront.net/CSSNVxjWR1eF7DVrSZNV_logo-patiotuerca--2-.webp" width="30"
+        <img class="navbar-brand-minimized" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAP4KTrEZJDqL5OobEM8rxffXrsXkGdBzlMDFgf03ihZg4iXbxAwNox0KVsnbM1eqt9FwsrFOV-BQlM6Y_nMRTG3Z63vBVXdry87UDofzL2v9YSs3wq1O-3RC_Id0jJqOUu3mCZuoL7oD8av-PdHaG6xxVwMZ-ETOR1ZJKhnVRe2h7TnpZTE6nfXNn/s1600/fotor_2023-5-30_12_16_5-removebg-preview.png" width="30"
              height="30" alt="InfyOm Logo">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">

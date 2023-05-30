@@ -48,13 +48,13 @@
 </li> -->
 <li class="nav-item {{ Request::is('clinicas*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('clinicas.index') }}">
-        <i class="nav-icon icon-cursor"></i>
+        <i class="fa fa-hospital-o" aria-hidden="true"></i>
         <span>Clinicas</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('doctores*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('doctores.index') }}">
-        <i class="nav-icon icon-cursor"></i>
+        <i class="fa fa-id-card" aria-hidden="true"></i>
         <span>Doctores</span>
     </a>
 </li>

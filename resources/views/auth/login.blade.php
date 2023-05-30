@@ -18,7 +18,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
+    <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAP4KTrEZJDqL5OobEM8rxffXrsXkGdBzlMDFgf03ihZg4iXbxAwNox0KVsnbM1eqt9FwsrFOV-BQlM6Y_nMRTG3Z63vBVXdry87UDofzL2v9YSs3wq1O-3RC_Id0jJqOUu3mCZuoL7oD8av-PdHaG6xxVwMZ-ETOR1ZJKhnVRe2h7TnpZTE6nfXNn/s1600/fotor_2023-5-30_12_16_5-removebg-preview.png">
 </head>
+
+    <style>
+        #lblInicio{
+            color: #0F5095;
+            font-family: Calibri;
+        }
+        #btnIng{
+            background-color: #C0392B;
+        }
+    </style>
 <body class="app flex-row align-items-center">
 <div class="container">
     <div class="row justify-content-center">
@@ -28,8 +39,8 @@
                     <div class="card-body">
                         <form method="post" action="{{ url('/login') }}">
                             @csrf
-                            <img class="navbar-brand-full" src="https://sae.fundacionvidanueva.org.ec/images/colegio.png" width="50" height="50">
-                            <h1>Iniciar Sesion</h1>
+                            <center><img class="navbar-brand-full" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiVsApcpks5NrdNipHOFUu8eaGjCeP1IJ_6g49a-iEbL7oLAcDry_iyO6zqyr8A9nzu9gBK59XeHCmeWVMQGZTuLVmWYHcZDTzPoLY6P2Wf_iQAnmkbWpWrt3ErAftQKzV_Y4jWGhTj7At_m-OQ9V4UPkNCZtx7U5obAblD_fn8F0KuSN9Q6nt-nfa/s320/fotor_2023-5-30_12_11_59-removebg-preview.png" width="210" height="90" ></center>
+                            <h1 id="lblInicio"><b>Iniciar Sesion</b></h1>
                             <p class="text-muted">Ingresa tu cuenta</p>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
@@ -60,7 +71,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <button class="btn btn-primary px-4" type="submit">Ingresar</button>
+                                    <button id="btnIng"  type="submit">Ingresar</button>
                                 </div>
                             </div>
                         </form>

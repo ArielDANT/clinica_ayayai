@@ -2,15 +2,15 @@
     <table class="table table-striped" id="doctores-table">
         <thead>
             <tr>
-                <th>Doc Nombres</th>
-        <th>Doc Apellidos</th>
-        <th>Doc Cedula</th>
-        <th>Doc Direccion</th>
-        <th>Doc Correo</th>
-        <th>Doc Sexo</th>
-        <th>Doc Especialidad</th>
-        <th>Doc Estado</th>
-                <th colspan="3">Action</th>
+                <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Cedula</th>
+        <th>Direccion</th>
+        <th>Correo</th>
+        <th>Sexo</th>
+        <th>Especialidad</th>
+        <th>Estado</th>
+                <th colspan="3">Opciones</th>
             </tr>
         </thead>
         <tbody>

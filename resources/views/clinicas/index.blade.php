@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Clinicas</li>
+        <li class="breadcrumb-item">Clínicas</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -23,6 +23,9 @@
                          </div>
                      </div>
                   </div>
+             </div>
+             <div class="card-body">
+                 {{ $clinicas->links() }}
              </div>
          </div>
     </div>

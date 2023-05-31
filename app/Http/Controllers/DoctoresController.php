@@ -29,7 +29,7 @@ class DoctoresController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $doctores = $this->doctoresRepository->all();
+        $doctores = $this->doctoresRepository->paginate(5);
 
         return view('doctores.index')
             ->with('doctores', $doctores);

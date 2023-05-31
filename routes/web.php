@@ -73,3 +73,6 @@ Route::resource('clinicas', App\Http\Controllers\ClinicaController::class);
 
 
 Route::resource('doctores', App\Http\Controllers\DoctoresController::class);
+
+
+Route::resource('pacientes', App\Http\Controllers\PacientesController::class);

@@ -2,12 +2,12 @@
     <table class="table table-striped" id="clinicas-table">
         <thead>
             <tr>
-                <th>Cli Nombres</th>
-        <th>Cli Ruc</th>
-        <th>Cli Telefono</th>
-        <th>Cli Direccion</th>
-        <th>Cli Correo</th>
-                <th colspan="3">Action</th>
+                <th>Nombres</th>
+        <th>Ruc</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Correo</th>
+                <th colspan="3">Opciones</th>
             </tr>
         </thead>
         <tbody>

@@ -34,10 +34,13 @@
         <img class="navbar-brand-minimized" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAP4KTrEZJDqL5OobEM8rxffXrsXkGdBzlMDFgf03ihZg4iXbxAwNox0KVsnbM1eqt9FwsrFOV-BQlM6Y_nMRTG3Z63vBVXdry87UDofzL2v9YSs3wq1O-3RC_Id0jJqOUu3mCZuoL7oD8av-PdHaG6xxVwMZ-ETOR1ZJKhnVRe2h7TnpZTE6nfXNn/s1600/fotor_2023-5-30_12_16_5-removebg-preview.png" width="30"
              height="30" alt="InfyOm Logo">
     </a>
-    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+  <!--   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
-    </button>
-
+    </button> -->
+    <div>
+ 
+    <button class="sidebar-minimizer brand-minimizer fa fa-trash"type="button">Ocultar</button>
+</div>
     <ul class="nav navbar-nav ml-auto">
         <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#">

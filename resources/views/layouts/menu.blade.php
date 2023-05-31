@@ -49,12 +49,18 @@
 <li class="nav-item {{ Request::is('clinicas*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('clinicas.index') }}">
         <i class="fa fa-hospital-o" aria-hidden="true"></i>
-        <span>Clinicas</span>
+        <span>   Clínicas</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('doctores*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('doctores.index') }}">
         <i class="fa fa-id-card" aria-hidden="true"></i>
         <span>Doctores</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('pacientes*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('pacientes.index') }}">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <span>Pacientes</span>
     </a>
 </li>

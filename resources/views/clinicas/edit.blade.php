@@ -3,7 +3,7 @@
 @section('content')
     <ol class="breadcrumb">
           <li class="breadcrumb-item">
-             <a href="{!! route('clinicas.index') !!}">Clinica</a>
+             <a href="{!! route('clinicas.index') !!}">Clínica</a>
           </li>
           <li class="breadcrumb-item active">Edit</li>
         </ol>
@@ -15,7 +15,7 @@
                       <div class="card">
                           <div class="card-header">
                               <i class="fa fa-edit fa-lg"></i>
-                              <strong>Edit Clinica</strong>
+                              <strong>Editar Clínica</strong>
                           </div>
                           <div class="card-body">
                               {!! Form::model($clinica, ['route' => ['clinicas.update', $clinica->cli_id], 'method' => 'patch']) !!}

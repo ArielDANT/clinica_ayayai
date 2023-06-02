@@ -4,9 +4,9 @@
             <tr>
                 <th>Nombres</th>
         <th>Apellidos</th>
-        <th>Cedula</th>
+        <th>Cédula</th>
         <th>Dirección</th>
-        <th>Celular</th>
+        <th>Teléfono</th>
         <th>Sexo</th>
         <th>Correo</th>
         <th>Repre</th>

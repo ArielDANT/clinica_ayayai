@@ -29,7 +29,7 @@ class ClientesController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $clientes = $this->clientesRepository->all();
+        $clientes = $this->clientesRepository->paginate(4);
 
         return view('clientes.index')
             ->with('clientes', $clientes);

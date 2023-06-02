@@ -12,13 +12,13 @@
 
 <!-- Pac Cedula Field -->
 <div class="form-group">
-    {!! Form::label('pac_cedula', 'Cedula:') !!}
+    {!! Form::label('pac_cedula', 'Cédula:') !!}
     <p>{{ $pacientes->pac_cedula }}</p>
 </div>
 
 <!-- Pac Direccion Field -->
 <div class="form-group">
-    {!! Form::label('pac_direccion', 'Direccion:') !!}
+    {!! Form::label('pac_direccion', 'Dirección:') !!}
     <p>{{ $pacientes->pac_direccion }}</p>
 </div>
 

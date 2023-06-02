@@ -16,6 +16,13 @@
                              <a class="pull-right" href="{{ route('doctores.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">
+                    <form action="{{route('doctores.index')}}" method="GET">
+                        <div class="btn-group">
+                            <input type="text" name="Busqueda..." class="form-control" value="{{ $busqueda}}">
+                            <input type="submit" value="enviar" class="btn btn-primary">
+                        </div>
+                        
+                    </form>
                              @include('doctores.table')
                               <div class="pull-right mr-3">
                                      
@@ -25,9 +32,12 @@
                   </div>
 
              </div>
-             <div class="card-body">
+           <center>
+             <div class="d-flex justify-content-center">  
                  {{ $doctores->links()}}
+                       </center>
              </div>
+
          </div>
     </div>
 @endsection

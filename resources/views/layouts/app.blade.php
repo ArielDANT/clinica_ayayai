@@ -24,32 +24,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <style>
+        .custom-toggler.navbar-toggler{
+            border-color: lightgreen;
+            }
+    </style>
 <header class="app-header navbar">
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiVsApcpks5NrdNipHOFUu8eaGjCeP1IJ_6g49a-iEbL7oLAcDry_iyO6zqyr8A9nzu9gBK59XeHCmeWVMQGZTuLVmWYHcZDTzPoLY6P2Wf_iQAnmkbWpWrt3ErAftQKzV_Y4jWGhTj7At_m-OQ9V4UPkNCZtx7U5obAblD_fn8F0KuSN9Q6nt-nfa/s320/fotor_2023-5-30_12_11_59-removebg-preview.png" width="150" height="30"
+        <img class="navbar-brand-full" src="https://blogger.googleusercontent.com/img/a/AVvXsEh8CsuxFmjGGzj2r_CboSg7cEAUapx7ns3ryjnugkPUBYhQzQeqKvBF7Tm5G4t0AmKx80oLhAu4JbK30vxZ6qGqk77eRTWDrATriye5rTZ3kA4nqpwsoh3ZsETno_b11J-wihHEoTB6C-BO_e2jYW5xs3BhOPjJ2Z6LwCFMEDO1ZOnGRJBmCsKqkesx" width="150" height="30"
              alt="InfyOm Logo">
         <img class="navbar-brand-minimized" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAP4KTrEZJDqL5OobEM8rxffXrsXkGdBzlMDFgf03ihZg4iXbxAwNox0KVsnbM1eqt9FwsrFOV-BQlM6Y_nMRTG3Z63vBVXdry87UDofzL2v9YSs3wq1O-3RC_Id0jJqOUu3mCZuoL7oD8av-PdHaG6xxVwMZ-ETOR1ZJKhnVRe2h7TnpZTE6nfXNn/s1600/fotor_2023-5-30_12_16_5-removebg-preview.png" width="30"
              height="30" alt="InfyOm Logo">
     </a>
-  <!--   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+    <div class="sidebar-lg-show">
+    <button class="navbar-toggler sidebar-toggler brand-minimizer d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <div>
+    </button>
  
-    <button class="sidebar-minimizer brand-minimizer fa fa-trash"type="button">Ocultar</button>
+    <!-- <button class="sidebar-minimizer brand-minimizer fa fa-trash"type="button">Ocultar</button> -->
 </div>
     <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item d-md-down-none">
+       <!--  <li class="nav-item d-md-down-none">
             <a class="nav-link" href="#">
                 <i class="icon-bell"></i>
                 <span class="badge badge-pill badge-danger">5</span>
             </a>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
-            <a class="nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
+            <img class="navbar-brand-minimized" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAP4KTrEZJDqL5OobEM8rxffXrsXkGdBzlMDFgf03ihZg4iXbxAwNox0KVsnbM1eqt9FwsrFOV-BQlM6Y_nMRTG3Z63vBVXdry87UDofzL2v9YSs3wq1O-3RC_Id0jJqOUu3mCZuoL7oD8av-PdHaG6xxVwMZ-ETOR1ZJKhnVRe2h7TnpZTE6nfXNn/s1600/fotor_2023-5-30_12_16_5-removebg-preview.png" width="30"
+             height="30" alt="InfyOm Logo">
+            <a class="btn btn-light" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="true" aria-expanded="false">
                 {{ Auth::user()->usu_usuario }}
             </a>

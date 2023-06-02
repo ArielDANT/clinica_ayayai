@@ -30,7 +30,7 @@
             background-color: #C0392B;
         }
     </style>
-<body class="app flex-row align-items-center">
+<body class="app flex-row align-items-center" >
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-5">

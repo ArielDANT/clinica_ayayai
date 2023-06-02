@@ -4,8 +4,8 @@
             <tr>
                 <th>Nombres</th>
         <th>Apellidos</th>
-        <th>Cedula</th>
-        <th>Direccion</th>
+        <th>Cédula</th>
+        <th>Dirección</th>
         <th>Correo</th>
         <th>Sexo</th>
         <th>Especialidad</th>

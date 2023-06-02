@@ -9,6 +9,8 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\Doctores;
+use Illuminate\Support\Facades\DB;
 
 class DoctoresController extends AppBaseController
 {
@@ -29,10 +31,22 @@ class DoctoresController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $doctores = $this->doctoresRepository->paginate(5);
+        $busqueda = trim($request->get('busqueda'));
+        $doctores = DB::table('doctores')
+                    ->select('doc_id','doc_nombres','doc_apellidos','doc_cedula','doc_direccion','doc_correo','doc_sexo','doc_especialidad','doc_estado')
+                    ->where('doc_nombres','LIKE','%'.$busqueda.'%')
+                    ->orWhere('doc_apellidos','LIKE','%'.$busqueda.'%')
+                    ->orderBy('doc_nombres', 'asc')
+                    ->paginate(4);
+    // $data = [
+    //             'doctores'=>$doctores,
+    //             'busqueda'=>$busqueda,
+    //     ]; 
 
-        return view('doctores.index')
-            ->with('doctores', $doctores);
+        return view('doctores.index', compact('doctores'));
+        //$doctores = $this->doctoresRepository->paginate(4);
+
+            //->with('doctores', $doctores);
     }
 
     /**

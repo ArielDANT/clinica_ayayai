@@ -64,3 +64,9 @@
         <span>Pacientes</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('salas*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('salas.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Salas</span>
+    </a>
+</li>

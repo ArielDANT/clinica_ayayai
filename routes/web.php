@@ -76,3 +76,6 @@ Route::resource('doctores', App\Http\Controllers\DoctoresController::class);
 
 
 Route::resource('pacientes', App\Http\Controllers\PacientesController::class);
+
+
+Route::resource('salas', App\Http\Controllers\SalasController::class);

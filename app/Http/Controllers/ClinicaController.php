@@ -29,7 +29,7 @@ class ClinicaController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $clinicas = $this->clinicaRepository->paginate(5);
+        $clinicas = $this->clinicaRepository->paginate(4);
 
         return view('clinicas.index')
             ->with('clinicas', $clinicas);

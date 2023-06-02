@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Pacientes</li>
+        <li class="breadcrumb-item">Salas</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -12,20 +12,17 @@
                      <div class="card">
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
-                             Pacientes
-                             <a class="pull-right" href="{{ route('pacientes.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                             Salas
+                             <a class="pull-right" href="{{ route('salas.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">
-                             @include('pacientes.table')
+                             @include('salas.table')
                               <div class="pull-right mr-3">
                                      
                               </div>
                          </div>
                      </div>
                   </div>
-             </div>
-            <div class="d-flex justify-content-center">
-                 {{ $pacientes->links()}}
              </div>
          </div>
     </div>

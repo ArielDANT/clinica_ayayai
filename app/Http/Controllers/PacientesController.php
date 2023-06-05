@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class PacientesController extends AppBaseController
 {
     /** @var PacientesRepository $pacientesRepository*/
@@ -29,10 +29,16 @@ class PacientesController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $pacientes = $this->pacientesRepository->paginate(5);
-
-        return view('pacientes.index')
-            ->with('pacientes', $pacientes);
+        $busqueda = trim($request->get('busqueda'));
+        $pacientes = DB::table('pacientes')
+                    ->select('pac_id','pac_nombres','pac_apellidos','pac_cedula','pac_direccion','pac_celular','pac_sexo','pac_correo','pac_repre','pac_estado')
+                    ->where('pac_apellidos','LIKE','%'.$busqueda.'%')
+                    ->orWhere('pac_cedula','LIKE','%'.$busqueda.'%')
+                    ->orderBy('pac_nombres', 'asc')
+                    ->paginate(4);
+        $fecha=date('Y-m-d');
+        return view('pacientes.index', compact('pacientes'))
+                ->with('fecha', $fecha);
     }
 
     /**

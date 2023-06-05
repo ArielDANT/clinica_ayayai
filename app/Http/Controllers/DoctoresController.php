@@ -34,16 +34,18 @@ class DoctoresController extends AppBaseController
         $busqueda = trim($request->get('busqueda'));
         $doctores = DB::table('doctores')
                     ->select('doc_id','doc_nombres','doc_apellidos','doc_cedula','doc_direccion','doc_correo','doc_sexo','doc_especialidad','doc_estado')
-                    ->where('doc_nombres','LIKE','%'.$busqueda.'%')
-                    ->orWhere('doc_apellidos','LIKE','%'.$busqueda.'%')
+                    ->where('doc_apellidos','LIKE','%'.$busqueda.'%')
+                    ->orWhere('doc_cedula','LIKE','%'.$busqueda.'%')
                     ->orderBy('doc_nombres', 'asc')
                     ->paginate(4);
+        $fecha=date('Y-m-d');
     // $data = [
     //             'doctores'=>$doctores,
     //             'busqueda'=>$busqueda,
     //     ]; 
 
-        return view('doctores.index', compact('doctores'));
+        return view('doctores.index', compact('doctores'))
+                ->with('fecha', $fecha);
         //$doctores = $this->doctoresRepository->paginate(4);
 
             //->with('doctores', $doctores);

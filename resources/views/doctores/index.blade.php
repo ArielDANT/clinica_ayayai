@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Doctores</li>
+        <li class="breadcrumb-item">Doctores a la fecha {{ $fecha }}</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -16,17 +16,15 @@
                              <a class="pull-right" href="{{ route('doctores.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">
-                    <form action="{{route('doctores.index')}}" method="GET">
-                        <div class="btn-group">
-                            <input type="text" name="Busqueda..." class="form-control" value="{{ $busqueda}}">
-                            <input type="submit" value="enviar" class="btn btn-primary">
-                        </div>
-                        
-                    </form>
+
                              @include('doctores.table')
                               <div class="pull-right mr-3">
-                                     
                               </div>
+                                @if(count($doctores)<=0)
+                                    <tr>
+                                        <td colspan="9"> <h4><b>No hay resultados para la búsqueda, intenta buscar mediante los apellidos o la cédula.</b></h4></td>
+                                    </tr>
+                                @endif
                          </div>
                      </div>
                   </div>

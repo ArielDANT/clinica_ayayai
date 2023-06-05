@@ -2,7 +2,7 @@
 
 @section('content')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Pacientes</li>
+        <li class="breadcrumb-item">Pacientes a la fecha {{ $fecha }}</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -20,6 +20,11 @@
                               <div class="pull-right mr-3">
                                      
                               </div>
+                                @if(count($pacientes)<=0)
+                                    <tr>
+                                        <td colspan="9"> <h4><b>No hay resultados para la búsqueda, intenta buscar mediante los apellidos o la cédula.</b></h4></td>
+                                    </tr>
+                                @endif
                          </div>
                      </div>
                   </div>

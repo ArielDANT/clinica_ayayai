@@ -49,7 +49,7 @@
 <li class="nav-item {{ Request::is('clinicas*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('clinicas.index') }}">
         <i class="fa fa-hospital-o" aria-hidden="true"></i>
-        <span>   Clínicas</span>
+        <span>Clínicas</span>
     </a>
 </li>
 <li class="nav-item {{ Request::is('doctores*') ? 'active' : '' }}">
@@ -66,7 +66,7 @@
 </li>
 <li class="nav-item {{ Request::is('salas*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('salas.index') }}">
-        <i class="nav-icon icon-cursor"></i>
+        <i class="fa-solid fa-igloo"></i>
         <span>Salas</span>
     </a>
 </li>

@@ -28,6 +28,7 @@
         }
         #btnIng{
             background-color: #C0392B;
+            font-family: Calibri;
         }
     </style>
 <body class="app flex-row align-items-center" >
@@ -40,8 +41,8 @@
                         <form method="post" action="{{ url('/login') }}">
                             @csrf
                             <center><img class="navbar-brand-full" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiVsApcpks5NrdNipHOFUu8eaGjCeP1IJ_6g49a-iEbL7oLAcDry_iyO6zqyr8A9nzu9gBK59XeHCmeWVMQGZTuLVmWYHcZDTzPoLY6P2Wf_iQAnmkbWpWrt3ErAftQKzV_Y4jWGhTj7At_m-OQ9V4UPkNCZtx7U5obAblD_fn8F0KuSN9Q6nt-nfa/s320/fotor_2023-5-30_12_11_59-removebg-preview.png" width="210" height="90" ></center>
-                            <h1 id="lblInicio"><b>Iniciar Sesion</b></h1>
-                            <p class="text-muted">Ingresa tu cuenta</p>
+                            <h1 id="lblInicio"><b>Iniciar Sesión</b></h1>
+                            <p class="text-muted">Ingresa tu cuenta para gestionar el sistema</p>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
@@ -71,7 +72,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <button id="btnIng"  type="submit">Ingresar</button>
+                                    <button id="btnIng" class="btn btn-danger" type="submit">
+                                        <b>Ingresar</b>
+                                    </button>
                                 </div>
                             </div>
                         </form>

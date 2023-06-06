@@ -6,18 +6,29 @@
       margin-top: 20px;
 
     }
+    body{
+    margin: 0;
+    padding: 0;
+    background: url(https://img.freepik.com/vector-gratis/fondo-dibujado-mano-dia-nacional-medico_23-2149438162.jpg?w=2000);   
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
 
     .tit{
 	font-size: 40px;
-	color: black;
-	margin-left: 10px;
-	margin-right: 50px;
+	color: white;
+	margin-left: 180px;
+	margin-right: 180px;
 	margin-top: 30px;
 	margin-bottom: 40px;
 	padding-left: 20px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	background-color: rgb(253,153,77,0.8);
+	border-radius: 5px;
+	flex: 1;
 }
 .opc{
 	font-size: 40px;
@@ -39,10 +50,16 @@
 .logo{
 	width: 200px;
 	margin: 20px;
+	font-size: 14px;
+	background-color: rgb(236,55,52,0.9); 
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
 
 }
 .contenedorImg{
-	background-color: rgb(235, 240, 229);
+	background-color: rgb(0,148,236,0.5);
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-bottom: 20px;
@@ -61,19 +78,22 @@
 		<div class="tit">
 			<b>¿Qué desea hacer?</b>
 		</div>
-
+</div>
 		<div class="opc">
 			<div img class="contenedorImg">
-				NADA
+				<a class="nav-lin" href="{{ route('pacientes.index') }}">
+				<input class="logo" type="submit" value="Registrar un nuevo paciente"></a>
 			</div>
 			<div img class="contenedorImg">
-				<img src="Barcelona.png" class="logo">
+				<a class="nav-lin" href="{{ route('salas.index') }}">
+				<input class="logo" type="submit" value="Ver salas..."></a>
 			</div>
 			<div img class="contenedorImg">
-				<img src="Orense.png" class="logo">
+				<a class="nav-lin" href="{{ route('clinicas.index') }}">
+				<input class="logo" type="submit" value="Administar Clínica y sucursales"></a>
 			</div>
 	</div>
-
+<!-- 
 		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -86,7 +106,7 @@
       <img class="d-block w-100" src="..." alt="Third slide">
     </div>
   </div>
-</div>
+</div> -->
 @endsection
 <!--  -->
 

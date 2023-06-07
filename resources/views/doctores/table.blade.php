@@ -2,13 +2,15 @@
     <table class="table table-striped" id="doctores-table">
         <thead>
             <tr>
+                <th>Sala</th>
                 <th>Nombres</th>
         <th>Apellidos</th>
         <th>Cédula</th>
         <th>Dirección</th>
         <th>Correo</th>
         <th>Sexo</th>
-        <th>Especialidad</th>
+        <th>Entrada</th>
+        <th>Salida</th>
         <th>Estado</th>
                 <th colspan="3">Opciones</th>
             </tr>
@@ -24,13 +26,15 @@
 
         @foreach($doctores as $doctores)
             <tr>
+                <td>{{ $doctores->sal_nombre}}</td>
                 <td>{{ $doctores->doc_nombres }}</td>
             <td>{{ $doctores->doc_apellidos }}</td>
             <td>{{ $doctores->doc_cedula }}</td>
             <td>{{ $doctores->doc_direccion }}</td>
             <td>{{ $doctores->doc_correo }}</td>
             <td>{{ $doctores->doc_sexo }}</td>
-            <td>{{ $doctores->doc_especialidad }}</td>
+            <td>{{ $doctores->doc_horaon }}</td>
+            <td>{{ $doctores->doc_horaoff }}</td>
             <td>{{ $doctores->doc_estado }}</td>
                 <td>
                     {!! Form::open(['route' => ['doctores.destroy', $doctores->doc_id], 'method' => 'delete']) !!}

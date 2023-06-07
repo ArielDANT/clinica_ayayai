@@ -47,7 +47,8 @@ class Doctores extends Model
         'doc_direccion',
         'doc_correo',
         'doc_sexo',
-        'doc_especialidad',
+        'doc_horaon',
+        'doc_horaoff',
         'doc_estado'
     ];
 
@@ -64,7 +65,8 @@ class Doctores extends Model
         'doc_direccion' => 'string',
         'doc_correo' => 'string',
         'doc_sexo' => 'string',
-        'doc_especialidad' => 'string',
+        'doc_horaon' => 'string',
+        'doc_horaoff' => 'string',
         'doc_estado' => 'integer'
     ];
 
@@ -80,7 +82,8 @@ class Doctores extends Model
         'doc_direccion' => 'required|string|max:255',
         'doc_correo' => 'required|string|max:255',
         'doc_sexo' => 'required|string|max:255',
-        'doc_especialidad' => 'required|string|max:255',
+        'doc_horaon' => 'required|string|max:255',
+        'doc_horaoff' => 'required|string|max:255',
         'doc_estado' => 'required|integer'
     ];
 
@@ -92,11 +95,11 @@ class Doctores extends Model
         return $this->hasMany(\App\Models\Citum::class, 'doc_id');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function users()
-    {
-        return $this->hasMany(\App\Models\User::class, 'doc_id');
-    }
+    // /**
+    //  * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    //  **/
+    // public function users()
+    // {
+    //     return $this->hasMany(\App\Models\User::class, 'doc_id');
+    // }
 }

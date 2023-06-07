@@ -16,7 +16,7 @@ class CreateCitaDetalleTable extends Migration
         Schema::create('cita_detalle', function (Blueprint $table) {
             $table->id('cid_id');
             $table->foreignid('cit_id')->references('cit_id')->on('cita');
-            $table->foreignid('sal_id')->references('sal_id')->on('salas');
+            $table->foreignid('pac_id')->references('pac_id')->on('pacientes');
             $table->string('cid_obs');
             $table->float('cid_vu');
             $table->string('cid_estado')->default('Nuevo');

@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use DB;
 
 class ClinicaController extends AppBaseController
 {
@@ -139,18 +140,22 @@ class ClinicaController extends AppBaseController
      */
     public function destroy($id)
     {
-        $clinica = $this->clinicaRepository->find($id);
+    //     $clinica = $this->clinicaRepository->find($id);
 
-        if (empty($clinica)) {
-            Flash::error('Clinica not found');
+    //     if (empty($clinica)) {
+    //         Flash::error('Clinica not found');
 
-            return redirect(route('clinicas.index'));
-        }
+    //         return redirect(route('clinicas.index'));
+    //     }
 
+    //     $this->clinicaRepository->delete($id);
+
+    //     Flash::success('Clinica deleted successfully.');
+
+    //     return redirect(route('clinicas.index'));
+    // }
+        DB::delete("DELETE FROM salas WHERE cli_id =$id");
         $this->clinicaRepository->delete($id);
-
-        Flash::success('Clinica deleted successfully.');
-
         return redirect(route('clinicas.index'));
-    }
+}
 }

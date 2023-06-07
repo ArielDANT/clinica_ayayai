@@ -1,3 +1,10 @@
+<!-- Emp Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('sal_id', 'Sala:') !!}
+    {!! Form::select('sal_id', $salas , null, ['class' => 'form-control']) !!}
+</div>
+
+
 <!-- Doc Nombres Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('doc_nombres', 'Nombres:') !!}
@@ -36,9 +43,16 @@
 
 <!-- Doc Especialidad Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('doc_especialidad', 'Especialidad:') !!}
-    {!! Form::text('doc_especialidad', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
+    {!! Form::label('doc_horaon', 'Entrada:') !!}
+    {!! Form::text('doc_horaon', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
 </div>
+
+<!-- Doc Especialidad Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('doc_horaoff', 'Salida:') !!}
+    {!! Form::text('doc_horaoff', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
+</div>
+
 
 <!-- Doc Estado Field -->
 <div class="form-group col-sm-6">

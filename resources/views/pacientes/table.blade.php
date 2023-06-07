@@ -15,6 +15,13 @@
             </tr>
         </thead>
         <tbody>
+        <form action="{{route('pacientes.index')}}" method="GET">
+                <div class="btn-group">
+                    <input type="text" name="busqueda" class="form-control">
+                    <input type="submit" value="Buscar" class="btn btn-primary">
+                </div>
+                        
+        </form>
         @foreach($pacientes as $pacientes)
             <tr>
                 <td>{{ $pacientes->pac_nombres }}</td>

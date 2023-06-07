@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<style> 
+body{
+    margin: 0;
+    padding: 0;
+    background: url(https://img.freepik.com/vector-gratis/fondo-dibujado-mano-dia-nacional-medico_23-2149438162.jpg?w=2000);   
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+</style>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Salas</li>
     </ol>

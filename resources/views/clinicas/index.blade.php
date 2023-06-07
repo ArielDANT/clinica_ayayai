@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<style> 
+body{
+    margin: 0;
+    padding: 0;
+    background: url(https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-97927.jpg?w=2000);   
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+</style>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Clínicas</li>
     </ol>

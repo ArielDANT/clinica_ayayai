@@ -29,9 +29,19 @@ body{
                               <div class="pull-right mr-3">
                                      
                               </div>
+                              @if(count($salas)<=0)
+                                    <tr>
+                                        <td colspan="9"> <h4><b>No hay resultados para la búsqueda, intenta buscar mediante el nombre de la sala o el piso general</b></h4></td>
+                                    </tr>
+                                @endif
                          </div>
                      </div>
                   </div>
+             </div>
+             <center>
+             <div class="d-flex justify-content-center">  
+                 {{ $salas->links()}}
+                       </center>
              </div>
          </div>
     </div>

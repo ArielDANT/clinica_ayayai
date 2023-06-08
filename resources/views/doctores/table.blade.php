@@ -2,7 +2,6 @@
     <table class="table table-striped" id="doctores-table">
         <thead>
             <tr>
-                <th>Sala</th>
                 <th>Nombres</th>
         <th>Apellidos</th>
         <th>Cédula</th>
@@ -26,7 +25,6 @@
 
         @foreach($doctores as $doctores)
             <tr>
-                <td>{{ $doctores->sal_nombre}}</td>
                 <td>{{ $doctores->doc_nombres }}</td>
             <td>{{ $doctores->doc_apellidos }}</td>
             <td>{{ $doctores->doc_cedula }}</td>

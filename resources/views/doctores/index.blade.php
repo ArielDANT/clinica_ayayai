@@ -6,10 +6,12 @@
     body{
     margin: 0;
     padding: 0;
-    background: url(https://img.freepik.com/vector-gratis/fondo-dibujado-mano-dia-nacional-medico_23-2149438162.jpg?w=2000);   
+    background: url(https://img.freepik.com/vector-gratis/antecedentes-medicos-limpios_53876-97927.jpg?w=2000); 
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
+    opacity: 100%;
+}
 </style>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Doctores a la fecha {{ $fecha }}</li>
@@ -41,6 +43,10 @@
 
              </div>
            <center>
+             <div class="d-flex justify-content-center">  
+                 {{ $doctores->links()}}
+                       </center>
+             </div>
             
 
          </div>

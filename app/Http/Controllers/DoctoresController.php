@@ -39,7 +39,6 @@ class DoctoresController extends AppBaseController
         //             ->orWhere('doc_cedula','LIKE','%'.$busqueda.'%')
         //             ->orderBy('doc_nombres', 'asc')
         //             ->paginate(4);
-         $fecha=date('Y-m-d');
     // $data = [
     //             'doctores'=>$doctores,
     //             'busqueda'=>$busqueda,
@@ -50,10 +49,19 @@ class DoctoresController extends AppBaseController
         //$doctores = $this->doctoresRepository->paginate(4);
 
             //->with('doctores', $doctores);
-            $doctores = DB::select("SELECT * FROM doctores d join  salas s on d.sal_id=s.sal_id" );
+        $doctores = DB::select("SELECT * FROM doctores d join  salas s on d.sal_id=s.sal_id" );
         $salas= Salas::pluck('sal_id' , 'sal_nombre');
+        $busqueda = trim($request->get('busqueda'));
+        $pagina = DB::table('doctores')
+                    ->select('doc_id','doc_nombres','doc_apellidos','doc_cedula','doc_direccion','doc_correo','doc_sexo','doc_horaon','doc_horaoff','doc_estado')
+                    ->where('doc_apellidos','LIKE','%'.$busqueda.'%')
+                    ->orWhere('doc_cedula','LIKE','%'.$busqueda.'%')
+                    ->orderBy('doc_nombres', 'asc')
+                    ->paginate(3); 
+        $fecha=date('Y-m-d');
         return view('doctores.index')
             ->with('doctores', $doctores)
+            ->with('doctores', $pagina)
             ->with ('salas', $salas)
             ->with('fecha', $fecha)
             ;
@@ -66,7 +74,10 @@ class DoctoresController extends AppBaseController
      */
     public function create()
     {
-        return view('doctores.create');
+        $salas= Salas::pluck('sal_nombre' , 'sal_id');
+        return view('doctores.create')
+         ->with ('salas', $salas)
+        ;
     }
 
     /**
@@ -103,8 +114,12 @@ class DoctoresController extends AppBaseController
 
             return redirect(route('doctores.index'));
         }
+        $salas= Salas::pluck('sal_nombre' , 'sal_id');
 
-        return view('doctores.show')->with('doctores', $doctores);
+        return view('doctores.show')
+        ->with('doctores', $doctores)
+        ->with('salas', $salas)
+        ;
     }
 
     /**
@@ -123,8 +138,12 @@ class DoctoresController extends AppBaseController
 
             return redirect(route('doctores.index'));
         }
+        $salas= Salas::pluck('sal_nombre' , 'sal_id');
 
-        return view('doctores.edit')->with('doctores', $doctores);
+        return view('doctores.edit')
+        ->with('doctores', $doctores)
+        ->with('salas', $salas)
+        ;
     }
 
     /**

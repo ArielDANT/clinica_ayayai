@@ -41,6 +41,7 @@ class Doctores extends Model
 
 
     public $fillable = [
+        'sal_id',
         'doc_nombres',
         'doc_apellidos',
         'doc_cedula',
@@ -59,6 +60,7 @@ class Doctores extends Model
      */
     protected $casts = [
         'doc_id' => 'integer',
+        'sal_id' => 'integer',
         'doc_nombres' => 'string',
         'doc_apellidos' => 'string',
         'doc_cedula' => 'string',
@@ -76,6 +78,7 @@ class Doctores extends Model
      * @var array
      */
     public static $rules = [
+        'sal_id' => 'required',
         'doc_nombres' => 'required|string|max:255',
         'doc_apellidos' => 'required|string|max:255',
         'doc_cedula' => 'required|string|max:255',

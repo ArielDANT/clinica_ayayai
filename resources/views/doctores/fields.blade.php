@@ -38,7 +38,7 @@
 <!-- Doc Sexo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('doc_sexo', 'Sexo:') !!}
-    {!! Form::text('doc_sexo', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
+    {!! Form::select('doc_sexo', ['Masculino'=>'Masculino' , 'Femenino'=>'Femenino' , 'Otro o no definido...'=>'Otro o no definido...'] ,null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Doc Especialidad Field -->
@@ -57,7 +57,7 @@
 <!-- Doc Estado Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('doc_estado', 'Estado:') !!}
-    {!! Form::number('doc_estado', null, ['class' => 'form-control']) !!}
+    {!! Form::select('doc_estado', ['1'=>'Activo' , '0'=>'Inactivo'] ,null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

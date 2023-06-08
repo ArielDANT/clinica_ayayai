@@ -1,6 +1,6 @@
 <!-- Cli Id Field -->
 <div class="form-group">
-    {!! Form::label('cli_id', 'Cli Id:') !!}
+    {!! Form::label('cli_id', 'Clínica:') !!}
     <p>{{ $salas->cli_id }}</p>
 </div>
 

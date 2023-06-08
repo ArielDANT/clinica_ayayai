@@ -2,9 +2,7 @@
     <table class="table table-striped" id="salas-table">
         <thead>
             <tr>
-                <th>Cli Id</th>
         <th>#</th>
-        <th>Clínica</th>
         <th>Sal Nombre</th>
         <th>Sal Descripcion</th>
         <th>Sal Piso</th>
@@ -14,11 +12,16 @@
             </tr>
         </thead>
         <tbody>
+        <form action="{{route('salas.index')}}" method="GET">
+                <div class="btn-group">
+                    <input type="text" name="busqueda" class="form-control">
+                    <input type="submit" value="Buscar" class="btn btn-primary">
+                </div>
+                        
+        </form>
         @foreach($salas as $salas)
             <tr>
-                <td>{{ $salas->cli_id }}</td>
                 <td>{{ $loop->iteration}}</td>
-                <td>{{ $salas->cli_nombres }}</td>
             <td>{{ $salas->sal_nombre }}</td>
             <td>{{ $salas->sal_descripcion }}</td>
             <td>{{ $salas->sal_piso }}</td>

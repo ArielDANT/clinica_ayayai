@@ -37,9 +37,19 @@ class SalasController extends AppBaseController
         //    ->with('salas', $salas);
         $salas = DB::select("SELECT * FROM salas s join  clinica c on s.cli_id=c.cli_id" );
         $clinicas= Clinica::pluck('cli_id' , 'cli_nombres');
+        $busqueda = trim($request->get('busqueda'));
+        $pagina = DB::table('salas')
+                    ->select('sal_id','sal_nombre','sal_descripcion','sal_piso','sal_numsal','sal_estado')
+                    ->where('sal_nombre','LIKE','%'.$busqueda.'%')
+                    ->orWhere('sal_piso','LIKE','%'.$busqueda.'%')
+                    ->orderBy('sal_numsal', 'asc')
+                    ->paginate(3); 
+        $fecha=date('Y-m-d');
         return view('salas.index')
             ->with('salas', $salas)
-            ->with ('clinicas', $clinicas)
+            ->with('salas', $pagina)
+            ->with ('clinica', $clinicas)
+            ->with('fecha', $fecha)
             ;
     }
 
@@ -50,7 +60,10 @@ class SalasController extends AppBaseController
      */
     public function create()
     {
-        return view('salas.create');
+        $clinicas= Clinica::pluck('cli_nombres' , 'cli_id');
+        return view('salas.create')
+         ->with ('clinicas', $clinicas)
+        ;
     }
 
     /**
@@ -81,6 +94,7 @@ class SalasController extends AppBaseController
     public function show($id)
     {
         $salas = $this->salasRepository->find($id);
+        $clinicas = Clinica::pluck('cli_id' , 'cli_nombres');
 
         if (empty($salas)) {
             Flash::error('Salas not found');
@@ -88,7 +102,10 @@ class SalasController extends AppBaseController
             return redirect(route('salas.index'));
         }
 
-        return view('salas.show')->with('salas', $salas);
+        return view('salas.show')
+        ->with('salas', $salas)
+        ->with('clinica', $clinicas)
+        ;
     }
 
     /**

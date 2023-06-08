@@ -1,7 +1,7 @@
 <!-- Cli Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('cli_id', 'Cli Id:') !!}
-    {!! Form::number('cli_id', null, ['class' => 'form-control']) !!}
+    {!! Form::select('cli_id', $clinicas, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Sal Nombre Field -->
@@ -31,7 +31,7 @@
 <!-- Sal Estado Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('sal_estado', 'Sal Estado:') !!}
-    {!! Form::number('sal_estado', null, ['class' => 'form-control']) !!}
+    {!! Form::select('sal_estado', ['1'=>'Activo' , '0'=>'Inactivo'] ,null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

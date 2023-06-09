@@ -55,6 +55,10 @@
 <!-- Doc Estado Field -->
 <div class="form-group col-sm-3">
     {!! Form::label('doc_estado', 'Estado:') !!}
-    <p>{{ $doctores->doc_estado }}</p>
+    <p>@if($doctores->doc_estado == 1)
+                Activo
+                @else
+                Inactivo
+                @endif</p>
 </div>
 

@@ -15,7 +15,7 @@ class CreateCitaTable extends Migration
     {
         Schema::create('cita', function (Blueprint $table) {
             $table->id('cit_id');
-            $table->foreignid('doc_id')->references('doc_id')->on('doctores');
+            $table->foreignid('sal_id')->references('sal_id')->on('salas');
             $table->date('cit_fecha');
             $table->string('cit_documento');
             $table->integer('cit_estado')->default(1);

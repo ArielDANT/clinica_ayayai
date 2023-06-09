@@ -49,6 +49,11 @@
 <!-- Pac Estado Field -->
 <div class="form-group">
     {!! Form::label('pac_estado', 'Estado:') !!}
-    <p>{{ $pacientes->pac_estado }}</p>
+    <p>@if($pacientes->pac_estado == 1)
+                Activo
+                @else
+                Inactivo
+                @endif
+                </p>
 </div>
 

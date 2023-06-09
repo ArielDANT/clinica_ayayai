@@ -9,7 +9,7 @@
     body{
     margin: 0;
     padding: 0;
-    background: url(https://img.freepik.com/vector-gratis/fondo-dibujado-mano-dia-nacional-medico_23-2149438162.jpg?w=2000);   
+    background: url(https://blogger.googleusercontent.com/img/a/AVvXsEiKOS7IENRXHhd81_Fy3eda9ZCuEBrfW3rkggGxkZhjJx-L6XGidQ1Yb0rsxJ4QCKaVoAFeOMaBeWk1dcx7RrOSCaDDBVPcfD_7CqOFbd6ehvyeoXopu1Xd3_nIVC_o6j7ML1Ug4uzxeawUbJEgwe24435FttAfKsPWKuliKJZBhr4zaF1Bo2VZw-XT);   
     background-size: cover;
     background-position: center;
     font-family: sans-serif;

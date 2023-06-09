@@ -5,11 +5,8 @@
                 <th>Nombres</th>
         <th>Apellidos</th>
         <th>Cédula</th>
-        <th>Dirección</th>
         <th>Teléfono</th>
-        <th>Sexo</th>
-        <th>Correo</th>
-        <th>Repre</th>
+        <th>Representante</th>
         <th>Estado</th>
                 <th colspan="3">Opciones</th>
             </tr>
@@ -27,12 +24,13 @@
                 <td>{{ $pacientes->pac_nombres }}</td>
             <td>{{ $pacientes->pac_apellidos }}</td>
             <td>{{ $pacientes->pac_cedula }}</td>
-            <td>{{ $pacientes->pac_direccion }}</td>
             <td>{{ $pacientes->pac_celular }}</td>
-            <td>{{ $pacientes->pac_sexo }}</td>
-            <td>{{ $pacientes->pac_correo }}</td>
             <td>{{ $pacientes->pac_repre }}</td>
-            <td>{{ $pacientes->pac_estado }}</td>
+            <td>@if($pacientes->pac_estado == 1)
+                Activo
+                @else
+                Inactivo
+                @endif</td>
                 <td>
                     {!! Form::open(['route' => ['pacientes.destroy', $pacientes->pac_id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

@@ -18,7 +18,7 @@ class CreateCitaDetalleTable extends Migration
             $table->foreignid('cit_id')->references('cit_id')->on('cita');
             $table->foreignid('pac_id')->references('pac_id')->on('pacientes');
             $table->string('cid_obs');
-            $table->float('cid_vu');
+            $table->float('cid_mot');
             $table->string('cid_estado')->default('Nuevo');
         });
     }

@@ -3,12 +3,11 @@
         <thead>
             <tr>
         <th>#</th>
-        <th>Sal Nombre</th>
-        <th>Sal Descripcion</th>
-        <th>Sal Piso</th>
-        <th>Sal Numsal</th>
-        <th>Sal Estado</th>
-                <th colspan="3">Action</th>
+        <th>Nombre</th>
+        <th>Piso</th>
+        <th>Número de sala</th>
+        <th>Estado</th>
+                <th colspan="3">Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -23,10 +22,13 @@
             <tr>
                 <td>{{ $loop->iteration}}</td>
             <td>{{ $salas->sal_nombre }}</td>
-            <td>{{ $salas->sal_descripcion }}</td>
             <td>{{ $salas->sal_piso }}</td>
             <td>{{ $salas->sal_numsal }}</td>
-            <td>{{ $salas->sal_estado }}</td>
+            <td>@if($salas->sal_estado == 1)
+                Activo
+                @else
+                Inactivo
+                @endif</td>
                 <td>
                     {!! Form::open(['route' => ['salas.destroy', $salas->sal_id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

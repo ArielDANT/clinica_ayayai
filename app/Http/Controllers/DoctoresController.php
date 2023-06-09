@@ -58,7 +58,7 @@ class DoctoresController extends AppBaseController
                     ->orWhere('doc_cedula','LIKE','%'.$busqueda.'%')
                     ->orderBy('doc_nombres', 'asc')
                     ->paginate(3); 
-        $fecha=date('Y-m-d');
+        $fecha=date('Y-m-d'); 
         return view('doctores.index')
             ->with('doctores', $doctores)
             ->with('doctores', $pagina)

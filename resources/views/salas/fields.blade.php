@@ -17,7 +17,7 @@
 </div>
 
 <!-- Sal Piso Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-6">   
     {!! Form::label('sal_piso', 'Sal Piso:') !!}
     {!! Form::text('sal_piso', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
 </div>

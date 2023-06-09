@@ -79,3 +79,6 @@ Route::resource('pacientes', App\Http\Controllers\PacientesController::class);
 
 
 Route::resource('salas', App\Http\Controllers\SalasController::class);
+
+
+Route::resource('citas', App\Http\Controllers\CitasController::class);

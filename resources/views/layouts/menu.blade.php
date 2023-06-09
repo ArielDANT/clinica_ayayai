@@ -66,7 +66,13 @@
 </li>
 <li class="nav-item {{ Request::is('salas*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('salas.index') }}">
-        <i class="fa-solid fa-igloo"></i>
+        <i class="fa fa-heart"></i>
         <span>Salas</span>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('citas*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('citas.index') }}">
+        <i class="fa fa-calendar"></i>
+        <span>Citas</span>
     </a>
 </li>

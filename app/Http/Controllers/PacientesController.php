@@ -64,7 +64,7 @@ class PacientesController extends AppBaseController
 
         $pacientes = $this->pacientesRepository->create($input);
 
-        Flash::success('Pacientes saved successfully.');
+        Flash::success('El paciente ha sido guardado con éxito');
 
         return redirect(route('pacientes.index'));
     }
@@ -81,7 +81,7 @@ class PacientesController extends AppBaseController
         $pacientes = $this->pacientesRepository->find($id);
 
         if (empty($pacientes)) {
-            Flash::error('Pacientes not found');
+            Flash::error('Paciente no encontrado');
 
             return redirect(route('pacientes.index'));
         }
@@ -101,7 +101,7 @@ class PacientesController extends AppBaseController
         $pacientes = $this->pacientesRepository->find($id);
 
         if (empty($pacientes)) {
-            Flash::error('Pacientes not found');
+            Flash::error('Paciente no encontrado');
 
             return redirect(route('pacientes.index'));
         }
@@ -122,14 +122,14 @@ class PacientesController extends AppBaseController
         $pacientes = $this->pacientesRepository->find($id);
 
         if (empty($pacientes)) {
-            Flash::error('Pacientes not found');
+            Flash::error('Paciente no encontrado');
 
             return redirect(route('pacientes.index'));
         }
 
         $pacientes = $this->pacientesRepository->update($request->all(), $id);
 
-        Flash::success('Pacientes updated successfully.');
+        Flash::success('El paciente ha sido actualizado con éxito');
 
         return redirect(route('pacientes.index'));
     }
@@ -155,7 +155,7 @@ class PacientesController extends AppBaseController
 
         $this->pacientesRepository->delete($id);
 
-        Flash::success('Pacientes deleted successfully.');
+        Flash::success('El paciente ha sido borrado con éxito');
 
         return redirect(route('pacientes.index'));
     }

@@ -3,9 +3,9 @@
 @section('content')
     <ol class="breadcrumb">
           <li class="breadcrumb-item">
-             <a href="{!! route('salas.index') !!}">Salas</a>
+             <a href="{!! route('citas.index') !!}">Citas</a>
           </li>
-          <li class="breadcrumb-item active">Editar sala</li>
+          <li class="breadcrumb-item active">Edit</li>
         </ol>
     <div class="container-fluid">
          <div class="animated fadeIn">
@@ -15,12 +15,12 @@
                       <div class="card">
                           <div class="card-header">
                               <i class="fa fa-edit fa-lg"></i>
-                              <strong>Edit Salas</strong>
+                              <strong>Edit Citas</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($salas, ['route' => ['salas.update', $salas->sal_id], 'method' => 'patch']) !!}
+                              {!! Form::model($citas, ['route' => ['citas.update', $citas->cit_id], 'method' => 'patch']) !!}
 
-                              @include('salas.fields')
+                              @include('citas.fields')
 
                               {!! Form::close() !!}
                             </div>

@@ -25,6 +25,7 @@ body{
                              <a class="pull-right" href="{{ route('pacientes.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">
+                            <a class="pull-right" href="{{ route('pacientes.pdf') }}">{{'PDF'}}<i class="fa fa-book"></i></a>
                              @include('pacientes.table')
                               <div class="pull-right mr-3">
                                      

@@ -25,11 +25,11 @@
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
                              Doctores
-                            <a class="pull-right" href="{{ route('doctores.pdf') }}">{{'PDF'}}<i class=""></i></a>
 
                              <a class="pull-right" href="{{ route('doctores.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">
+                            <a class="pull-right" href="{{ route('doctores.pdf') }}">{{'PDF'}}<i class="fa fa-book"></i></a>
 
                              @include('doctores.table')
                               <div class="pull-right mr-3">

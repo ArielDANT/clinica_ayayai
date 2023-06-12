@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 Route::get('/doctores/pdf', [App\Http\Controllers\DoctoresController::class, 'pdf'])->name('doctores.pdf');
 
+Route::get('/pacientes/pdf', [App\Http\Controllers\PacientesController::class, 'pdf'])->name('pacientes.pdf');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

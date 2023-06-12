@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use DB;
+use PDF;
+
 class PacientesController extends AppBaseController
 {
     /** @var PacientesRepository $pacientesRepository*/
@@ -39,6 +41,19 @@ class PacientesController extends AppBaseController
         $fecha=date('Y-m-d');
         return view('pacientes.index', compact('pacientes'))
                 ->with('fecha', $fecha);
+    }
+
+    public function pdf(Request $request)
+    {
+        $pacientes = $this->pacientesRepository->all();
+        $pdf=PDF::loadView('pacientes.pdf', ['pacientes' =>$pacientes]);
+        $fecha=date('Y-m-d');
+
+        return $pdf->setPaper('a4', 'landscape')->stream();
+        return view('pacientes.index')
+            ->with('pacientes', $pacientes)
+            ->with('fecha', $fecha)
+            ;
     }
 
     /**

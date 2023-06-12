@@ -12,6 +12,7 @@ use Response;
 use App\Models\Doctores;
 use Illuminate\Support\Facades\DB;
 use App\Models\Salas;
+use PDF;
 
 class DoctoresController extends AppBaseController
 {
@@ -67,6 +68,21 @@ class DoctoresController extends AppBaseController
             ;
     }
 
+    public function pdf(Request $request)
+    {
+        $doctores = DB::select("SELECT * FROM doctores d join salas s on s.sal_id=s.sal_id" );
+        $salas= Salas::pluck('sal_id' , 'sal_nombre');
+        $pdf=PDF::loadView('doctores.pdf', ['doctores' =>$doctores]);
+        $fecha=date('Y-m-d');
+
+        return $pdf->setPaper('a4', 'landscape')->stream();
+        return view('doctores.index')
+            ->with('doctores', $doctores)
+            ->with('salas', $salas)
+            ->with('fecha', $fecha)
+            ;
+    }
+
     /**
      * Show the form for creating a new Doctores.
      *
@@ -110,7 +126,7 @@ class DoctoresController extends AppBaseController
         $doctores = $this->doctoresRepository->find($id);
 
         if (empty($doctores)) {
-            Flash::error('Doctores not found');
+            Flash::error('Doctores not XDXDXDfound');
 
             return redirect(route('doctores.index'));
         }

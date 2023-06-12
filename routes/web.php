@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/doctores/pdf', [App\Http\Controllers\DoctoresController::class, 'pdf'])->name('doctores.pdf');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -82,3 +85,7 @@ Route::resource('salas', App\Http\Controllers\SalasController::class);
 
 
 Route::resource('citas', App\Http\Controllers\CitasController::class);
+
+
+
+

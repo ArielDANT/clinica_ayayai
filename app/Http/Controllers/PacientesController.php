@@ -174,4 +174,22 @@ class PacientesController extends AppBaseController
 
         return redirect(route('pacientes.index'));
     }
+
+    public function busca_pacientes(Request $rq ){
+        $dt=$rq->all();
+        $paciente=$dt['paciente'];
+        $result=DB::SELECT("SELECT * FROM pacientes WHERE (
+            pac_nombres LIKE '%$paciente%' OR
+            pac_apellidos LIKE '%$paciente%' OR
+            pac_cedula LIKE '%$paciente%') 
+        ");
+        return Response()->json($result);
+
+    }    
+    public function getpacientebyid(Request $rq){
+        $dt=$rq->all();
+        $pac_id=$dt['pac_id'];
+        $paciente=$this->pacientesRepository->find($pac_id);
+        return Response()->json($paciente);
+    }
 }

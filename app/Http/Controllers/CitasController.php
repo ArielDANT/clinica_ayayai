@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\Salas;
 
 class CitasController extends AppBaseController
 {
@@ -42,7 +43,11 @@ class CitasController extends AppBaseController
      */
     public function create()
     {
-        return view('citas.create');
+        $salas=Salas::orderBy('sal_nombre')
+                    ->pluck('sal_nombre' , 'sal_id');
+        
+        return view('citas.create')
+                ->with('salas', $salas);
     }
 
     /**
@@ -55,12 +60,27 @@ class CitasController extends AppBaseController
     public function store(CreateCitasRequest $request)
     {
         $input = $request->all();
+        $encabezado=[
+            "sal_id" => $input['sal_id'],
+            "cit_fecha" => $input['cit_fecha'],
+            "cit_documento" => $input['cit_documento'],
+            "cit_estado" => $input['cit_estado']
+        ];
+        
 
         $citas = $this->citasRepository->create($input);
 
-        Flash::success('Citas saved successfully.');
+        $detalle=[
+            "cit_id"=> $citas->cit_id,
+            "cid_obs" => $input['ivd_cantidad'],
+            "pac_id" => $input['pac_id'],
+            "pac_descripcion" => $input['pac_descripcion'],
+            "cit_mot" => $input['cit_mot'],
+            "cid_estado" => $input['cid_estado']
+        ];
 
-        return redirect(route('citas.index'));
+        CitaDetalle::create($detalle);
+        return redirect(route('citas.edit',$citas->cit_id));
     }
 
     /**

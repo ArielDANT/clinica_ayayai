@@ -57,6 +57,8 @@ Route::get('change_password_profile', 'App\Http\Controllers\UsuariosController@c
 Route::post('change_password_profile', 'App\Http\Controllers\UsuariosController@change_password_profile')->name('change_password_profile');
 
 Route::resource('inventarios', App\Http\Controllers\InventarioController::class);
+
+
 Route::post('/inventarios/create/busca_vehiculos','App\Http\Controllers\VehiculosController@busca_vehiculos')
 ->name('busca_vehiculos');
 
@@ -88,6 +90,18 @@ Route::resource('salas', App\Http\Controllers\SalasController::class);
 
 
 Route::resource('citas', App\Http\Controllers\CitasController::class);
+
+Route::post('/citas/create/busca_pacientes','App\Http\Controllers\PacientesController@busca_pacientes')
+->name('busca_pacientes');
+
+Route::post('/citas/create/GetPacienteById','App\Http\Controllers\PacientesController@GetPacienteById')
+->name('getpacientebyid');
+
+Route::post('/citas/{id}/edit/busca_pacientes','App\Http\Controllers\PacientesController@busca_pacientes')
+->name('busca_pacientes');
+
+Route::post('/citas/{id}/edit/GetPacienteById','App\Http\Controllers\PacientesController@GetPacienteById')
+->name('getpacientebyid');
 
 
 

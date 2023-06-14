@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\Salas;
+use App\Models\Pacientes;
+use App\Models\CitaDetalle;
+use DB;
 
 class CitasController extends AppBaseController
 {
@@ -72,10 +75,10 @@ class CitasController extends AppBaseController
 
         $detalle=[
             "cit_id"=> $citas->cit_id,
-            "cid_obs" => $input['ivd_cantidad'],
+            "cid_obs" => $input['cid_obs'],
             "pac_id" => $input['pac_id'],
             "pac_descripcion" => $input['pac_descripcion'],
-            "cit_mot" => $input['cit_mot'],
+            "cid_mot" => $input['cid_mot'],
             "cid_estado" => $input['cid_estado']
         ];
 
@@ -110,17 +113,18 @@ class CitasController extends AppBaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($cit_id)
     {
-        $citas = $this->citasRepository->find($id);
+        $cita = $this->citasRepository->find($cit_id);
 
-        if (empty($citas)) {
-            Flash::error('Citas not found');
+        $salas=Salas::orderBy('sal_nombre')->pluck('sal_nombre' , 'sal_id');
 
-            return redirect(route('citas.index'));
-        }
-
-        return view('citas.edit')->with('citas', $citas);
+        $detalle=DB::select("SELECT * FROM cita_detalle cid JOIN pacientes pa ON cid.pac_id=pa.pac_id WHERE cit_id=$cit_id");
+        
+        return view('citas.edit')
+        ->with('citas', $cita)
+        ->with('salas',  $salas)    
+        ->with('detalle',$detalle);
     }
 
     /**
@@ -133,19 +137,19 @@ class CitasController extends AppBaseController
      */
     public function update($id, UpdateCitasRequest $request)
     {
-        $citas = $this->citasRepository->find($id);
+        $input=$request->all();
+         
+        $detalle=[
+            "cit_id"=>$id,
+            "cid_obs" => $input['cid_obs'],
+            "pac_id" => $input['pac_id'],
+            "pac_descripcion" => $input['pac_descripcion'],
+            "cid_mot" => $input['cid_mot'],
+            "cid_estado" => $input['cid_estado']
+        ];
 
-        if (empty($citas)) {
-            Flash::error('Citas not found');
-
-            return redirect(route('citas.index'));
-        }
-
-        $citas = $this->citasRepository->update($request->all(), $id);
-
-        Flash::success('Citas updated successfully.');
-
-        return redirect(route('citas.index'));
+        CitaDetalle::create($detalle);
+        return redirect(route('citas.edit', $id));
     }
 
     /**

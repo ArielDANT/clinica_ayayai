@@ -83,7 +83,7 @@ class CitasController extends AppBaseController
         ];
 
         CitaDetalle::create($detalle);
-        return redirect(route('citas.edit',$citas->cit_id));
+        return redirect(route('citas.show',$citas->cit_id));
     }
 
     /**
@@ -102,8 +102,10 @@ class CitasController extends AppBaseController
 
             return redirect(route('citas.index'));
         }
+        $salas= Salas::pluck('sal_id' , 'sal_nombre');
 
-        return view('citas.show')->with('citas', $citas);
+        return view('citas.show')
+        ->with('citas', $citas);
     }
 
     /**

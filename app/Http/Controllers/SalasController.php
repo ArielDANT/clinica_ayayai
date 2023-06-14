@@ -125,7 +125,11 @@ class SalasController extends AppBaseController
             return redirect(route('salas.index'));
         }
 
-        return view('salas.edit')->with('salas', $salas);
+        $clinicas = Clinica::pluck('cli_nombres' , 'cli_id');
+
+        return view('salas.edit')
+        ->with('salas', $salas)
+        ->with('clinica', $clinicas);
     }
 
     /**

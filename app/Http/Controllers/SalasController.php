@@ -11,6 +11,7 @@ use Flash;
 use Response;
 use DB;
 use App\Models\Clinica;
+use PDF;
 
 class SalasController extends AppBaseController
 {
@@ -51,6 +52,26 @@ class SalasController extends AppBaseController
             ->with ('clinica', $clinicas)
             ->with('fecha', $fecha)
             ;
+    }
+
+    public function pdf(Request $request)
+    {
+        $salas = DB::select("SELECT * FROM salas s join clinica c on s.cli_id=c.cli_id" );
+        $clinicas= Clinica::pluck('cli_id' , 'cli_nombres');
+        $pdf=PDF::loadView('salas.pdf', ['salas' =>$salas]);
+
+
+        return $pdf->setPaper('a4', 'landscape')->stream();
+    }
+
+    public function onepdf($id, Request $request)
+    {
+        $salas = $this->salasRepository->find($id);
+        $clinicas= Clinica::pluck('cli_id' , 'cli_nombres');
+        $pdf=PDF::loadView('salas.onepdf', ['salas' =>$salas]);
+
+
+        return $pdf->setPaper('a4', 'landscape')->stream();
     }
 
     /**

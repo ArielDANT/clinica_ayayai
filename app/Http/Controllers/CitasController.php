@@ -12,7 +12,9 @@ use Response;
 use App\Models\Salas;
 use App\Models\Pacientes;
 use App\Models\CitaDetalle;
+use App\Models\Citas;
 use DB;
+use PDF;
 
 class CitasController extends AppBaseController
 {
@@ -33,10 +35,39 @@ class CitasController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $citas = $this->citasRepository->all();
-
+        $citas = DB::select("SELECT * FROM cita d join  salas s on d.sal_id=s.sal_id" );
+        $salas= Salas::pluck('sal_id' , 'sal_nombre');
+        $busqueda = trim($request->get('busqueda'));
+        $pagina = DB::table('cita')
+                    ->select('cit_id','cit_fecha','cit_documento','cit_estado')
+                    ->where('cit_documento','LIKE','%'.$busqueda.'%')
+                    ->orWhere('cit_id','LIKE','%'.$busqueda.'%')
+                    ->orderBy('cit_documento', 'asc')
+                    ->paginate(4); 
+        $fecha=date('Y-m-d'); 
         return view('citas.index')
-            ->with('citas', $citas);
+            ->with('citas', $citas)
+            ->with('citas', $pagina)
+            ->with ('salas', $salas)
+            ->with('fecha', $fecha)
+            ;
+    }
+    /* Aquí programo mi archivo PDF
+    
+     */
+    public function pdf(Request $request)
+    {
+        $citas=DB::select("SELECT * FROM cita_detalle cid JOIN pacientes pa ON cid.pac_id=pa.pac_id WHERE cit_id=cit_id");
+        $cita= Citas::pluck('cit_id' , 'cit_fecha');
+        $pdf=PDF::loadView('citas.pdf', ['citas' =>$citas]);
+
+
+        return $pdf->setPaper('a4', 'landscape')->stream();
+        return view('citas.index')
+            ->with('citas', $citas)
+            ->with('citas', $cita)
+            ->with('fecha', $fecha)
+            ;
     }
 
     /**
@@ -165,18 +196,8 @@ class CitasController extends AppBaseController
      */
     public function destroy($id)
     {
-        $citas = $this->citasRepository->find($id);
-
-        if (empty($citas)) {
-            Flash::error('Citas not found');
-
-            return redirect(route('citas.index'));
-        }
-
+        DB::delete("DELETE FROM cita_detalle WHERE cit_id =$id");
         $this->citasRepository->delete($id);
-
-        Flash::success('Citas deleted successfully.');
-
         return redirect(route('citas.index'));
     }
 }

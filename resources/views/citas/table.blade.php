@@ -2,7 +2,7 @@
     <table class="table table-striped" id="citas-table">
         <thead>
             <tr>
-                <th>Sal Id</th>
+              
         <th>Cit Fecha</th>
         <th>Cit Documento</th>
         <th>Cit Estado</th>
@@ -10,12 +10,26 @@
             </tr>
         </thead>
         <tbody>
+
+            <form action="{{route('citas.index')}}" method="GET">
+                <div class="btn-group">
+                    <input type="text" name="busqueda" class="form-control">
+                    <input type="submit" value="Buscar" class="btn btn-primary">
+                </div>
+                        
+        </form>
+
         @foreach($citas as $citas)
             <tr>
-                <td>{{ $citas->sal_id }}</td>
+                
             <td>{{ $citas->cit_fecha }}</td>
             <td>{{ $citas->cit_documento }}</td>
-            <td>{{ $citas->cit_estado }}</td>
+            <td>@if ($citas->cit_estado == 1)
+                Activo
+                @else
+                Inactivo
+                @endif
+            </td>
                 <td>
                     {!! Form::open(['route' => ['citas.destroy', $citas->cit_id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

@@ -70,7 +70,7 @@ class DoctoresController extends AppBaseController
 
     public function pdf(Request $request)
     {
-        $doctores = DB::select("SELECT * FROM doctores d join salas s on s.sal_id=s.sal_id" );
+        $doctores = DB::select("SELECT * FROM doctores d join salas s on d.sal_id=s.sal_id" );
         $salas= Salas::pluck('sal_id' , 'sal_nombre');
         $pdf=PDF::loadView('doctores.pdf', ['doctores' =>$doctores]);
         $fecha=date('Y-m-d');

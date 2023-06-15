@@ -22,6 +22,12 @@ Route::get('/doctores/pdf', [App\Http\Controllers\DoctoresController::class, 'pd
 
 Route::get('/pacientes/pdf', [App\Http\Controllers\PacientesController::class, 'pdf'])->name('pacientes.pdf');
 
+Route::get('/salas/pdf', [App\Http\Controllers\SalasController::class, 'pdf'])->name('salas.pdf');
+
+Route::get('/salas/onepdf', [App\Http\Controllers\SalasController::class, 'onepdf'])->name('salas.onepdf');
+
+Route::get('/citas/pdf', [App\Http\Controllers\CitasController::class, 'pdf'])->name('citas.pdf');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

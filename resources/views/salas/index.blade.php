@@ -11,7 +11,7 @@ body{
     font-family: sans-serif;
 </style>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Las salas</li>
+        <li class="breadcrumb-item">Salas</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -25,6 +25,8 @@ body{
                              <a class="pull-right" href="{{ route('salas.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">
+
+                            <a class="pull-right" href="{{ route('salas.pdf') }}">{{'PDF'}}<i class="fa fa-book"></i></a>
                              @include('salas.table')
                               <div class="pull-right mr-3">
                                      

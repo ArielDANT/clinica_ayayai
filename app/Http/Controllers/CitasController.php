@@ -57,17 +57,11 @@ class CitasController extends AppBaseController
      */
     public function pdf(Request $request)
     {
-        $citas=DB::select("SELECT * FROM cita_detalle cid JOIN pacientes pa ON cid.pac_id=pa.pac_id WHERE cit_id=cit_id");
-        $cita= Citas::pluck('cit_id' , 'cit_fecha');
+        $citas=DB::select("SELECT * FROM cita_detalle dt join cita c on dt.cit_id=c.cit_id join pacientes p on dt.pac_id=p.pac_id");
         $pdf=PDF::loadView('citas.pdf', ['citas' =>$citas]);
 
 
         return $pdf->setPaper('a4', 'landscape')->stream();
-        return view('citas.index')
-            ->with('citas', $citas)
-            ->with('citas', $cita)
-            ->with('fecha', $fecha)
-            ;
     }
 
     /**

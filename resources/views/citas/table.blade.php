@@ -3,10 +3,10 @@
         <thead>
             <tr>
               
-        <th>Cit Fecha</th>
-        <th>Cit Documento</th>
-        <th>Cit Estado</th>
-                <th colspan="3">Action</th>
+        <th>Fecha</th>
+        <th>Documento</th>
+        <th>Estado</th>
+                <th colspan="3">Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -25,9 +25,9 @@
             <td>{{ $citas->cit_fecha }}</td>
             <td>{{ $citas->cit_documento }}</td>
             <td>@if ($citas->cit_estado == 1)
-                Activo
+                Registrado
                 @else
-                Inactivo
+                Anulado
                 @endif
             </td>
                 <td>

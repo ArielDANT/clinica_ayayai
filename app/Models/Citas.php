@@ -81,4 +81,9 @@ class Citas extends Model
     {
         return $this->belongsToMany(\App\Models\Paciente::class, 'cita_detalle');
     }
+
+    public function cita_detalle()
+    {
+        return $this->hasMany(\App\Models\CitaDetalle::class, 'cit_id');
+    }
 }
